@@ -107,9 +107,9 @@ st.markdown("""
 if 'weight_log' not in st.session_state:
     st.session_state.weight_log = []
 if 'current_weight' not in st.session_state:
-    st.session_state.current_weight = 142.0
+    st.session_state.current_weight = 150.0
 if 'goal_weight' not in st.session_state:
-    st.session_state.goal_weight = 115.0
+    st.session_state.goal_weight = 120.0
 if 'bmr' not in st.session_state:
     st.session_state.bmr = 0
 
@@ -136,15 +136,15 @@ with st.sidebar:
         min_value=50.0, 
         max_value=500.0, 
         value=st.session_state.goal_weight, 
-        step=0.1
+        step=0.5
     )
 
     st.markdown("---")
     st.header("Progress Parameters")
-    calorie_intake = st.slider("Daily Calorie Intake", 1000, 2500, 1200, step=50)
-    fasting_days = st.slider("Fasting Days Per Week", 0, 5, 2)
-    barre_sessions = st.slider("Barre Sessions Per Week", 0, 7, 3)
-    additional_steps = st.slider("Additional Daily Steps", 0, 20000, 3000, step=500)
+    calorie_intake = st.slider("Daily Calorie Intake", 500, 2500, 1500, step=50)
+    fasting_days = st.slider("Fasting Days Per Week", 0, 5, 0)
+    barre_sessions = st.slider("Barre Sessions Per Week", 0, 7, 0)
+    additional_steps = st.slider("Additional Daily Steps", 0, 20000, 500, step=500)
 
 # BMR Calculation Function
 def calculate_bmr(weight, age, height_inches, sex):
